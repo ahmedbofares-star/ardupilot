@@ -1,0 +1,26 @@
+include ../BlitzH743Pro/hwdef.dat
+
+# ------------------------------------------------------------
+# CONFIRMED FROM YOUR CONNECTION-OVERVIEW MANUAL:
+# ------------------------------------------------------------
+
+# Silkscreen shows T1/R1, T2/R2, T3/R3, T4 (TX only) pads.
+# CRSF Receiver -> T1/R1 header
+# VTX connector -> T4 (TX only, 12V, G)
+# GPS connector -> separate UART (5V GND TX RX) + I2C (SDA SCL) combined
+# T2/R2, T3/R3 -> broken out but not pre-wired to anything in the diagram
+
+# Single IMU only (ICM42688P) - confirmed no second gyro pad exists,
+# unlike SPEDIXH743's dual-gyro layout. BlitzH743Pro is also
+# single-IMU, so no override needed here.
+
+# ------------------------------------------------------------
+# STILL UNVERIFIED (inherited as-is from BlitzH743Pro, may be wrong):
+# ------------------------------------------------------------
+# - IMU SPI bus number + CS pin
+# - OSD SPI bus number + CS pin
+# - Flash chip SPI bus number + CS pin
+# - Exact MCU pin behind each T1-T4 silkscreen label
+# - Motor M1-M8 to TIM/channel mapping
+
+APJ_BOARD_ID 5000
